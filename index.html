@@ -39,7 +39,6 @@
     overflow-x: hidden;
   }
 
-  /* Header */
   .header {
     position: sticky;
     top: 0;
@@ -53,11 +52,7 @@
     justify-content: space-between;
   }
 
-  .header-brand {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+  .header-brand { display: flex; align-items: center; gap: 8px; }
 
   .logo-pill {
     background: var(--accent);
@@ -78,512 +73,170 @@
     letter-spacing: 0.04em;
   }
 
-  .progress-ring {
-    width: 36px;
-    height: 36px;
-    position: relative;
-  }
-
+  .progress-ring { width: 36px; height: 36px; position: relative; }
   .progress-ring svg { transform: rotate(-90deg); }
   .progress-ring .track { fill: none; stroke: var(--border); stroke-width: 2.5; }
   .progress-ring .fill { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; transition: stroke-dashoffset 0.4s ease; }
   .progress-count {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    color: var(--accent2);
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 600; color: var(--accent2);
   }
 
-  /* Hero */
-  .hero {
-    padding: 28px 16px 20px;
-    position: relative;
-    overflow: hidden;
-  }
-
+  .hero { padding: 28px 16px 20px; position: relative; overflow: hidden; }
   .hero::before {
-    content: '';
-    position: absolute;
-    top: -40px;
-    right: -60px;
-    width: 200px;
-    height: 200px;
+    content: ''; position: absolute; top: -40px; right: -60px;
+    width: 200px; height: 200px;
     background: radial-gradient(circle, rgba(124,109,248,0.12) 0%, transparent 70%);
     pointer-events: none;
   }
 
   .hero-tag {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    color: var(--accent2);
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
+    font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 500;
+    letter-spacing: 0.14em; color: var(--accent2); text-transform: uppercase;
+    margin-bottom: 10px; display: flex; align-items: center; gap: 6px;
   }
-
-  .hero-tag::before {
-    content: '';
-    width: 20px;
-    height: 1px;
-    background: var(--accent);
-  }
+  .hero-tag::before { content: ''; width: 20px; height: 1px; background: var(--accent); }
 
   .hero-name {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 22px;
-    font-weight: 600;
-    line-height: 1.25;
-    letter-spacing: -0.02em;
-    color: white;
-    margin-bottom: 8px;
+    font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600;
+    line-height: 1.25; letter-spacing: -0.02em; color: white; margin-bottom: 8px;
   }
 
-  .hero-sub {
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.6;
-  }
+  .hero-sub { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
 
-  /* Stats row */
-  .stats-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    padding: 0 16px 20px;
-  }
+  .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 0 16px 20px; }
+  .stat-chip { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 8px; text-align: center; }
+  .stat-num { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; color: white; display: block; }
+  .stat-label { font-size: 10px; color: var(--text-dim); letter-spacing: 0.04em; margin-top: 2px; }
 
-  .stat-chip {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 12px 8px;
-    text-align: center;
-  }
-
-  .stat-num {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    color: white;
-    display: block;
-  }
-
-  .stat-label {
-    font-size: 10px;
-    color: var(--text-dim);
-    letter-spacing: 0.04em;
-    margin-top: 2px;
-  }
-
-  /* Nav tabs */
-  .nav-tabs {
-    display: flex;
-    gap: 4px;
-    padding: 0 16px 16px;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
+  .nav-tabs { display: flex; gap: 4px; padding: 0 16px 16px; overflow-x: auto; scrollbar-width: none; }
   .nav-tabs::-webkit-scrollbar { display: none; }
 
   .tab-btn {
-    flex-shrink: 0;
-    padding: 7px 14px;
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text-muted);
-    font-size: 12px;
-    font-family: 'Noto Sans JP', sans-serif;
-    cursor: pointer;
-    transition: all 0.2s;
-    white-space: nowrap;
+    flex-shrink: 0; padding: 7px 14px; border-radius: 20px; border: 1px solid var(--border);
+    background: transparent; color: var(--text-muted); font-size: 12px;
+    font-family: 'Noto Sans JP', sans-serif; cursor: pointer; transition: all 0.2s; white-space: nowrap;
   }
+  .tab-btn.active { background: var(--accent); border-color: var(--accent); color: white; font-weight: 500; }
 
-  .tab-btn.active {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: white;
-    font-weight: 500;
-  }
-
-  /* Section label */
   .section-label {
-    padding: 0 16px 12px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    padding: 0 16px 12px; font-family: 'Space Grotesk', sans-serif; font-size: 11px;
+    font-weight: 500; letter-spacing: 0.1em; color: var(--text-dim); text-transform: uppercase;
+    display: flex; align-items: center; gap: 8px;
   }
-  .section-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-  /* Cards */
   .cards-list { padding: 0 16px; display: flex; flex-direction: column; gap: 10px; }
 
-  .qa-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    overflow: hidden;
-    transition: border-color 0.2s;
-  }
-
+  .qa-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: border-color 0.2s; }
   .qa-card.open { border-color: var(--border-active); }
 
-  .qa-header {
-    padding: 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    user-select: none;
-  }
+  .qa-header { padding: 16px; cursor: pointer; display: flex; align-items: flex-start; gap: 12px; user-select: none; }
 
   .qa-num {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--accent);
-    background: var(--accent-glow);
-    border: 1px solid rgba(124,109,248,0.25);
-    border-radius: 6px;
-    padding: 3px 7px;
-    flex-shrink: 0;
-    margin-top: 1px;
-    letter-spacing: 0.04em;
+    font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600; color: var(--accent);
+    background: var(--accent-glow); border: 1px solid rgba(124,109,248,0.25); border-radius: 6px;
+    padding: 3px 7px; flex-shrink: 0; margin-top: 1px; letter-spacing: 0.04em;
   }
 
-  .qa-title {
-    flex: 1;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.5;
-    color: var(--text);
-  }
+  /* コンテンツテキスト：1.2倍 */
+  .qa-title { flex: 1; font-size: 16.8px; font-weight: 500; line-height: 1.5; color: var(--text); }
 
-  .qa-chevron {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-    color: var(--text-dim);
-    transition: transform 0.3s ease;
-    margin-top: 2px;
-  }
-
+  .qa-chevron { width: 18px; height: 18px; flex-shrink: 0; color: var(--text-dim); transition: transform 0.3s ease; margin-top: 2px; }
   .qa-card.open .qa-chevron { transform: rotate(180deg); color: var(--accent2); }
 
-  .qa-body {
-    display: none;
-    padding: 0 16px 16px;
-    border-top: 1px solid var(--border);
-    padding-top: 14px;
-  }
-
+  .qa-body { display: none; padding: 0 16px 16px; border-top: 1px solid var(--border); padding-top: 14px; }
   .qa-card.open .qa-body { display: block; }
 
-  /* Interview patterns */
-  .patterns-section {
-    margin-bottom: 16px;
-  }
+  .patterns-section { margin-bottom: 16px; }
 
   .patterns-label {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    color: var(--teal);
-    text-transform: uppercase;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
+    font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 600;
+    letter-spacing: 0.12em; color: var(--teal); text-transform: uppercase;
+    margin-bottom: 8px; display: flex; align-items: center; gap: 6px;
   }
+  .patterns-label::before { content: ''; width: 3px; height: 3px; border-radius: 50%; background: var(--teal); }
 
-  .patterns-label::before {
-    content: '';
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    background: var(--teal);
-  }
-
+  /* 問いかけパターン：1.2倍 */
   .pattern-chip {
-    background: rgba(45,212,191,0.06);
-    border: 1px solid rgba(45,212,191,0.18);
-    border-radius: 8px;
-    padding: 8px 10px;
-    font-size: 12px;
-    color: rgba(45,212,191,0.85);
-    margin-bottom: 6px;
-    line-height: 1.5;
-    font-style: italic;
+    background: rgba(45,212,191,0.06); border: 1px solid rgba(45,212,191,0.18);
+    border-radius: 8px; padding: 8px 10px; font-size: 14.4px; color: rgba(45,212,191,0.85);
+    margin-bottom: 6px; line-height: 1.5; font-style: italic;
   }
 
-  /* Answer section */
   .answer-section { margin-top: 4px; }
-
-  .answer-tab-row {
-    display: flex;
-    gap: 4px;
-    margin-bottom: 10px;
-  }
+  .answer-tab-row { display: flex; gap: 4px; margin-bottom: 10px; }
 
   .atab {
-    padding: 5px 12px;
-    border-radius: 16px;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text-muted);
-    font-size: 11px;
-    font-family: 'Space Grotesk', sans-serif;
-    cursor: pointer;
-    transition: all 0.2s;
+    padding: 5px 12px; border-radius: 16px; border: 1px solid var(--border);
+    background: transparent; color: var(--text-muted); font-size: 11px;
+    font-family: 'Space Grotesk', sans-serif; cursor: pointer; transition: all 0.2s;
   }
-
-  .atab.active {
-    background: rgba(124,109,248,0.15);
-    border-color: rgba(124,109,248,0.4);
-    color: var(--accent2);
-  }
+  .atab.active { background: rgba(124,109,248,0.15); border-color: rgba(124,109,248,0.4); color: var(--accent2); }
 
   .answer-en, .answer-ja { display: none; }
   .answer-en.show, .answer-ja.show { display: block; }
 
+  /* 英語回答：1.2倍 */
   .answer-en {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 13.5px;
-    line-height: 1.75;
-    color: var(--text);
-    background: rgba(255,255,255,0.03);
-    border-left: 2px solid var(--accent);
-    border-radius: 0 8px 8px 0;
-    padding: 12px 14px;
+    font-family: 'Space Grotesk', sans-serif; font-size: 16.2px; line-height: 1.75; color: var(--text);
+    background: rgba(255,255,255,0.03); border-left: 2px solid var(--accent);
+    border-radius: 0 8px 8px 0; padding: 12px 14px;
   }
 
-  .answer-ja {
-    font-size: 13px;
-    line-height: 1.8;
-    color: var(--text-muted);
-    padding: 10px 0;
-  }
+  /* 日本語訳：1.2倍 */
+  .answer-ja { font-size: 15.6px; line-height: 1.8; color: var(--text-muted); padding: 10px 0; }
 
-  /* Icebreaker cards */
-  .ice-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 16px;
-    margin-bottom: 10px;
-  }
+  .ice-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px; margin-bottom: 10px; }
 
+  /* アイスブレイク問い：1.2倍 */
   .ice-q {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 12px;
-    color: var(--amber);
-    font-style: italic;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--border);
-    line-height: 1.5;
+    font-family: 'Space Grotesk', sans-serif; font-size: 14.4px; color: var(--amber);
+    font-style: italic; margin-bottom: 10px; padding-bottom: 10px;
+    border-bottom: 1px solid var(--border); line-height: 1.5;
   }
 
-  .ice-a {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 13px;
-    color: var(--text);
-    line-height: 1.75;
-  }
+  /* アイスブレイク回答：1.2倍 */
+  .ice-a { font-family: 'Space Grotesk', sans-serif; font-size: 15.6px; color: var(--text); line-height: 1.75; }
 
-  .ice-tip {
-    margin-top: 8px;
-    font-size: 11px;
-    color: var(--text-dim);
-    display: flex;
-    align-items: flex-start;
-    gap: 5px;
-    line-height: 1.5;
-  }
+  .ice-tip { margin-top: 8px; font-size: 11px; color: var(--text-dim); display: flex; align-items: flex-start; gap: 5px; line-height: 1.5; }
   .ice-tip::before { content: '※'; flex-shrink: 0; color: var(--accent2); }
 
-  /* Listening cards */
   .listen-group { margin-bottom: 20px; }
+  .listen-group-title { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 10px; padding: 0 16px; }
 
-  .listen-group-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    padding: 0 16px;
-  }
+  .phrase-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; margin-bottom: 6px; display: flex; gap: 10px; align-items: flex-start; }
+  .phrase-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 6px; }
 
-  .phrase-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 12px 14px;
-    margin-bottom: 6px;
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-  }
+  /* フレーズ英語：1.2倍 */
+  .phrase-en { font-family: 'Space Grotesk', sans-serif; font-size: 15.6px; color: var(--text); font-style: italic; margin-bottom: 3px; line-height: 1.5; }
 
-  .phrase-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    flex-shrink: 0;
-    margin-top: 6px;
-  }
+  /* フレーズ日本語：1.2倍 */
+  .phrase-ja { font-size: 14.4px; color: var(--text-muted); line-height: 1.5; }
 
-  .phrase-en {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 13px;
-    color: var(--text);
-    font-style: italic;
-    margin-bottom: 3px;
-    line-height: 1.5;
-  }
-
-  .phrase-ja {
-    font-size: 12px;
-    color: var(--text-muted);
-    line-height: 1.5;
-  }
-
-  /* Rescue phrases */
-  .rescue-card {
-    background: linear-gradient(135deg, rgba(248,113,113,0.06), rgba(251,191,36,0.04));
-    border: 1px solid rgba(248,113,113,0.18);
-    border-radius: 12px;
-    padding: 14px 16px;
-    margin: 0 16px 8px;
-  }
-
-  .rescue-label {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    color: var(--red-soft);
-    text-transform: uppercase;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
+  .rescue-card { background: linear-gradient(135deg, rgba(248,113,113,0.06), rgba(251,191,36,0.04)); border: 1px solid rgba(248,113,113,0.18); border-radius: 12px; padding: 14px 16px; margin: 0 16px 8px; }
+  .rescue-label { font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; color: var(--red-soft); text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
   .rescue-label::before { content: '🚨'; font-size: 11px; }
 
-  .rescue-en {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 13px;
-    color: var(--text);
-    font-style: italic;
-    line-height: 1.6;
-    margin-bottom: 4px;
-  }
+  /* 救済フレーズ：1.2倍 */
+  .rescue-en { font-family: 'Space Grotesk', sans-serif; font-size: 15.6px; color: var(--text); font-style: italic; line-height: 1.6; margin-bottom: 4px; }
+  .rescue-ja { font-size: 14.4px; color: var(--text-muted); line-height: 1.5; }
 
-  .rescue-ja {
-    font-size: 12px;
-    color: var(--text-muted);
-    line-height: 1.5;
-  }
-
-  /* Panel visibility */
   .panel { display: none; }
   .panel.active { display: block; }
 
-  /* Bottom padding */
   .bottom-space { height: 40px; }
 
-  /* Practice mode */
-  .practice-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: calc(100% - 32px);
-    margin: 0 16px 16px;
-    padding: 14px;
-    background: var(--accent);
-    border: none;
-    border-radius: 12px;
-    color: white;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: opacity 0.2s;
-    letter-spacing: 0.02em;
-  }
-  .practice-btn:active { opacity: 0.8; }
-
-  .practice-banner {
-    margin: 0 16px 16px;
-    background: rgba(124,109,248,0.08);
-    border: 1px solid rgba(124,109,248,0.2);
-    border-radius: 12px;
-    padding: 14px;
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.7;
-    display: none;
-  }
-  .practice-banner strong { color: var(--accent2); }
-
-  /* Checked state */
-  .qa-card.checked .qa-num {
-    background: rgba(52,211,153,0.12);
-    border-color: rgba(52,211,153,0.3);
-    color: var(--green);
-  }
-
   .check-btn {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 14px;
-    padding: 8px 14px;
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text-muted);
-    font-size: 12px;
-    font-family: 'Noto Sans JP', sans-serif;
-    cursor: pointer;
-    transition: all 0.2s;
+    display: flex; align-items: center; gap: 6px; margin-top: 14px;
+    padding: 8px 14px; border-radius: 20px; border: 1px solid var(--border);
+    background: transparent; color: var(--text-muted); font-size: 12px;
+    font-family: 'Noto Sans JP', sans-serif; cursor: pointer; transition: all 0.2s;
   }
-
-  .check-btn.done {
-    border-color: rgba(52,211,153,0.3);
-    color: var(--green);
-    background: rgba(52,211,153,0.08);
-  }
-
+  .check-btn.done { border-color: rgba(52,211,153,0.3); color: var(--green); background: rgba(52,211,153,0.08); }
   .check-btn::before { content: '○'; }
   .check-btn.done::before { content: '✓'; }
+  .qa-card.checked .qa-num { background: rgba(52,211,153,0.12); border-color: rgba(52,211,153,0.3); color: var(--green); }
 </style>
 </head>
 <body>
@@ -596,8 +249,7 @@
   <div class="progress-ring">
     <svg viewBox="0 0 36 36" width="36" height="36">
       <circle class="track" cx="18" cy="18" r="15"/>
-      <circle class="fill" id="progressCircle" cx="18" cy="18" r="15"
-        stroke-dasharray="94.25" stroke-dashoffset="94.25"/>
+      <circle class="fill" id="progressCircle" cx="18" cy="18" r="15" stroke-dasharray="94.25" stroke-dashoffset="94.25"/>
     </svg>
     <div class="progress-count" id="progressCount">0/5</div>
   </div>
@@ -610,18 +262,9 @@
 </div>
 
 <div class="stats-row">
-  <div class="stat-chip">
-    <span class="stat-num">5</span>
-    <div class="stat-label">想定問答</div>
-  </div>
-  <div class="stat-chip">
-    <span class="stat-num">4</span>
-    <div class="stat-label">アイスブレイク</div>
-  </div>
-  <div class="stat-chip">
-    <span class="stat-num">3</span>
-    <div class="stat-label">リスニング</div>
-  </div>
+  <div class="stat-chip"><span class="stat-num">5</span><div class="stat-label">想定問答</div></div>
+  <div class="stat-chip"><span class="stat-num">4</span><div class="stat-label">アイスブレイク</div></div>
+  <div class="stat-chip"><span class="stat-num">3</span><div class="stat-label">リスニング</div></div>
 </div>
 
 <div class="nav-tabs">
@@ -633,10 +276,8 @@
 <!-- Q&A Panel -->
 <div class="panel active" id="panel-qa">
   <div class="section-label">Core Interview Questions</div>
-
   <div class="cards-list">
 
-    <!-- Q1 -->
     <div class="qa-card" id="card-1">
       <div class="qa-header" onclick="toggleCard('card-1')">
         <span class="qa-num">Q1</span>
@@ -655,18 +296,13 @@
             <button class="atab active" onclick="switchAnswer('card-1','en',this)">English</button>
             <button class="atab" onclick="switchAnswer('card-1','ja',this)">日本語訳</button>
           </div>
-          <div class="answer-en show" id="card-1-en">
-            "Because I have been bridging the gap between advanced creative tools and users in Japan since the dawn of DTP. Moreover, as an early participant in NFFT led by Miho Kinomura, I already deeply understand Runway's community DNA in Japan. Combining my technical support experience with my active AI instructional workflows, I can perfectly scale Runway's localized onboarding and eliminate user friction."
-          </div>
-          <div class="answer-ja" id="card-1-ja">
-            「私はDTPの黎明期から、日本における高度なクリエイティブツールとユーザーの架け橋であり続けてきたからです。さらに、木之村美穂氏率いるNFFTの初期メンバーとして、日本におけるRunwayのコミュニティDNAをすでに深く理解しています。私のテクニカルサポートの経験と、現在進行形のAI指導ワークフローを融合させることで、Runwayのローカライズされたオンボーディングを完璧に拡大し、ユーザーの摩擦を解消できます」
-          </div>
+          <div class="answer-en show" id="card-1-en">"Because I have been bridging the gap between advanced creative tools and users in Japan since the dawn of DTP. Moreover, as an early participant in NFFT led by Miho Kinomura, I already deeply understand Runway's community DNA in Japan. Combining my technical support experience with my active AI instructional workflows, I can perfectly scale Runway's localized onboarding and eliminate user friction."</div>
+          <div class="answer-ja" id="card-1-ja">「私はDTPの黎明期から、日本における高度なクリエイティブツールとユーザーの架け橋であり続けてきたからです。さらに、木之村美穂氏率いるNFFTの初期メンバーとして、日本におけるRunwayのコミュニティDNAをすでに深く理解しています。私のテクニカルサポートの経験と、現在進行形のAI指導ワークフローを融合させることで、Runwayのローカライズされたオンボーディングを完璧に拡大し、ユーザーの摩擦を解消できます」</div>
         </div>
         <button class="check-btn" onclick="markDone('card-1',this)">練習済みにする</button>
       </div>
     </div>
 
-    <!-- Q2 -->
     <div class="qa-card" id="card-2">
       <div class="qa-header" onclick="toggleCard('card-2')">
         <span class="qa-num">Q2</span>
@@ -685,18 +321,13 @@
             <button class="atab active" onclick="switchAnswer('card-2','en',this)">English</button>
             <button class="atab" onclick="switchAnswer('card-2','ja',this)">日本語訳</button>
           </div>
-          <div class="answer-en show" id="card-2-en">
-            "AI tools make it easy to generate beautiful visuals, but without a strong core, it's just noise. I teach my students that a clear 'logline' is the anchor. When creators firmly define their intent before generation, they can effectively manage prompt sequencing and seed control to achieve true asset consistency, rather than just relying on random AI luck."
-          </div>
-          <div class="answer-ja" id="card-2-ja">
-            「AIツールを使えば美しい映像を作ることは簡単ですが、強い核心がなければそれはただのノイズです。私は学生たちに、明確な『ログライン』こそがアンカー（錨）だと教えています。クリエイターが生成前に自分の意図をしっかりと定義することで、単なるAIのランダムな運に頼るのではなく、真のアセットの一貫性を達成するための正確なプロンプト配列やシード値管理を効果的に行うことができるようになります」
-          </div>
+          <div class="answer-en show" id="card-2-en">"AI tools make it easy to generate beautiful visuals, but without a strong core, it's just noise. I teach my students that a clear 'logline' is the anchor. When creators firmly define their intent before generation, they can effectively manage prompt sequencing and seed control to achieve true asset consistency, rather than just relying on random AI luck."</div>
+          <div class="answer-ja" id="card-2-ja">「AIツールを使えば美しい映像を作ることは簡単ですが、強い核心がなければそれはただのノイズです。私は学生たちに、明確な『ログライン』こそがアンカー（錨）だと教えています。クリエイターが生成前に自分の意図をしっかりと定義することで、単なるAIのランダムな運に頼るのではなく、真のアセットの一貫性を達成するための正確なプロンプト配列やシード値管理を効果的に行うことができるようになります」</div>
         </div>
         <button class="check-btn" onclick="markDone('card-2',this)">練習済みにする</button>
       </div>
     </div>
 
-    <!-- Q3 -->
     <div class="qa-card" id="card-3">
       <div class="qa-header" onclick="toggleCard('card-3')">
         <span class="qa-num">Q3</span>
@@ -715,18 +346,13 @@
             <button class="atab active" onclick="switchAnswer('card-3','en',this)">English</button>
             <button class="atab" onclick="switchAnswer('card-3','ja',this)">日本語訳</button>
           </div>
-          <div class="answer-en show" id="card-3-en">
-            "I always lower the entry barrier by treating the workflow as a visual, systemized template. First, I have them change just one metric in the left panel—like the character trait—so they can instantly see the dramatic change in the output. Once they experience that instant gratification, I guide them step-by-step into the deeper logic of asset aggregation and multi-modal synchronization."
-          </div>
-          <div class="answer-ja" id="card-3-ja">
-            「私はいつも、そのワークフローを視覚的でシステム化されたテンプレートとして扱うことで、参入障壁を下げています。まず、左側のパネルにあるキャラクター特性などの数値を1つだけ変更してもらい、出力が劇的に変わるのを瞬時に体感させます。その『即時的な達成感』を経験させた後、アセットの集約やマルチモーダルの同期といった深いロジックへとステップ・バイ・ステップで導いていきます」
-          </div>
+          <div class="answer-en show" id="card-3-en">"I always lower the entry barrier by treating the workflow as a visual, systemized template. First, I have them change just one metric in the left panel—like the character trait—so they can instantly see the dramatic change in the output. Once they experience that instant gratification, I guide them step-by-step into the deeper logic of asset aggregation and multi-modal synchronization."</div>
+          <div class="answer-ja" id="card-3-ja">「私はいつも、そのワークフローを視覚的でシステム化されたテンプレートとして扱うことで、参入障壁を下げています。まず、左側のパネルにあるキャラクター特性などの数値を1つだけ変更してもらい、出力が劇的に変わるのを瞬時に体感させます。その『即時的な達成感』を経験させた後、アセットの集約やマルチモーダルの同期といった深いロジックへとステップ・バイ・ステップで導いていきます」</div>
         </div>
         <button class="check-btn" onclick="markDone('card-3',this)">練習済みにする</button>
       </div>
     </div>
 
-    <!-- Q4 -->
     <div class="qa-card" id="card-4">
       <div class="qa-header" onclick="toggleCard('card-4')">
         <span class="qa-num">Q4</span>
@@ -745,18 +371,13 @@
             <button class="atab active" onclick="switchAnswer('card-4','en',this)">English</button>
             <button class="atab" onclick="switchAnswer('card-4','ja',this)">日本語訳</button>
           </div>
-          <div class="answer-en show" id="card-4-en">
-            "As a technical instructor, I realized that a one-size-fits-all lecture struggled to foster growth because students possessed vastly different creative visions and varying levels of resolution regarding the production process. By shifting to an active-listening approach to clarify each individual's vision and guide their specific workflow, I enabled them to smoothly execute projects utilizing the right tools, which created a sense of accomplishment that significantly accelerated their growth."
-          </div>
-          <div class="answer-ja" id="card-4-ja">
-            「技術インストラクターとして、学生たちのスキルレベルに大きな差はなくても、彼らが抱くクリエイティブなビジョンや、制作プロセスに対する解像度の高さに大きなばらつきがあったため、一律の講義では全員の成長を促すことが難しいと気づきました。一人ひとりのビジョンを明確にし、それぞれのワークフローを導くための『傾聴アプローチ』へとシフトした結果、学生たちは最適なツールを使ってプロジェクトをスムーズに実行できるようになり、その達成感が彼らの成長を大幅に加速させました」
-          </div>
+          <div class="answer-en show" id="card-4-en">"As a technical instructor, I realized that a one-size-fits-all lecture struggled to foster growth because students possessed vastly different creative visions and varying levels of resolution regarding the production process. By shifting to an active-listening approach to clarify each individual's vision and guide their specific workflow, I enabled them to smoothly execute projects utilizing the right tools, which created a sense of accomplishment that significantly accelerated their growth."</div>
+          <div class="answer-ja" id="card-4-ja">「技術インストラクターとして、学生たちのスキルレベルに大きな差はなくても、彼らが抱くクリエイティブなビジョンや、制作プロセスに対する解像度の高さに大きなばらつきがあったため、一律の講義では全員の成長を促すことが難しいと気づきました。一人ひとりのビジョンを明確にし、それぞれのワークフローを導くための『傾聴アプローチ』へとシフトした結果、学生たちは最適なツールを使ってプロジェクトをスムーズに実行できるようになり、その達成感が彼らの成長を大幅に加速させました」</div>
         </div>
         <button class="check-btn" onclick="markDone('card-4',this)">練習済みにする</button>
       </div>
     </div>
 
-    <!-- Q5 -->
     <div class="qa-card" id="card-5">
       <div class="qa-header" onclick="toggleCard('card-5')">
         <span class="qa-num">Q5</span>
@@ -775,12 +396,8 @@
             <button class="atab active" onclick="switchAnswer('card-5','en',this)">English</button>
             <button class="atab" onclick="switchAnswer('card-5','ja',this)">日本語訳</button>
           </div>
-          <div class="answer-en show" id="card-5-en">
-            "Adapting to rapid tech shifts is something I've done my entire career. I don't just read release notes; I actively benchmark new features in my daily classroom routines to test their real-world edge cases. By instantly transforming Runway's latest multi-modal features into deterministic, structured frameworks, I keep both my students and myself ahead of the curve."
-          </div>
-          <div class="answer-ja" id="card-5-ja">
-            「急速なテクノロジーのシフトに適応することは、私のキャリア全体を通じて行ってきたことです。私は単にリリースノートを読むだけでなく、日々のクラスのルーティンの中で新機能を積極的にベンチマークし、実際のユースケースにおけるエッジケースをテストしています。Runwayの最新のマルチモーダル機能を即座に再現性のある構造化されたフレームワークに変換することで、学生も自分自身も常に最先端を走り続けることができます」
-          </div>
+          <div class="answer-en show" id="card-5-en">"Adapting to rapid tech shifts is something I've done my entire career. I don't just read release notes; I actively benchmark new features in my daily classroom routines to test their real-world edge cases. By instantly transforming Runway's latest multi-modal features into deterministic, structured frameworks, I keep both my students and myself ahead of the curve."</div>
+          <div class="answer-ja" id="card-5-ja">「急速なテクノロジーのシフトに適応することは、私のキャリア全体を通じて行ってきたことです。私は単にリリースノートを読むだけでなく、日々のクラスのルーティンの中で新機能を積極的にベンチマークし、実際のユースケースにおけるエッジケースをテストしています。Runwayの最新のマルチモーダル機能を即座に再現性のある構造化されたフレームワークに変換することで、学生も自分自身も常に最先端を走り続けることができます」</div>
         </div>
         <button class="check-btn" onclick="markDone('card-5',this)">練習済みにする</button>
       </div>
@@ -820,7 +437,7 @@
 
     <div style="background: rgba(124,109,248,0.06); border: 1px solid rgba(124,109,248,0.2); border-radius: 12px; padding: 14px; margin-top: 4px;">
       <div style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: var(--accent2); text-transform: uppercase; margin-bottom: 8px;">回答の黄金パターン</div>
-      <div style="font-size: 13px; color: var(--text-muted); line-height: 1.8;">
+      <div style="font-size: 15.6px; color: var(--text-muted); line-height: 1.8;">
         返答（Yes/No + α） <span style="color: var(--accent);">→</span> 自分の現在の状況を一言 <span style="color: var(--accent);">→</span> 相手への聞き返し
       </div>
     </div>
@@ -837,24 +454,15 @@
     <div style="padding: 0 16px; display: flex; flex-direction: column; gap: 6px;">
       <div class="phrase-card">
         <div class="phrase-dot"></div>
-        <div>
-          <div class="phrase-en">"Let's dive right in." / "Let's jump right into it."</div>
-          <div class="phrase-ja">早速、本題に入りましょう</div>
-        </div>
+        <div><div class="phrase-en">"Let's dive right in." / "Let's jump right into it."</div><div class="phrase-ja">早速、本題に入りましょう</div></div>
       </div>
       <div class="phrase-card">
         <div class="phrase-dot"></div>
-        <div>
-          <div class="phrase-en">"To kick things off, could you...?"</div>
-          <div class="phrase-ja">まずは口火を切るために、〜してもらえますか？</div>
-        </div>
+        <div><div class="phrase-en">"To kick things off, could you...?"</div><div class="phrase-ja">まずは口火を切るために、〜してもらえますか？</div></div>
       </div>
       <div class="phrase-card">
         <div class="phrase-dot"></div>
-        <div>
-          <div class="phrase-en">"I'd love to start by..."</div>
-          <div class="phrase-ja">まずは〜から始めたいと思います</div>
-        </div>
+        <div><div class="phrase-en">"I'd love to start by..."</div><div class="phrase-ja">まずは〜から始めたいと思います</div></div>
       </div>
     </div>
   </div>
@@ -864,31 +472,19 @@
     <div style="padding: 0 16px; display: flex; flex-direction: column; gap: 6px;">
       <div class="phrase-card">
         <div class="phrase-dot" style="background: var(--teal);"></div>
-        <div>
-          <div class="phrase-en">"Walk me through your resume."</div>
-          <div class="phrase-ja">レジュメに沿って、経歴を詳しく説明してください</div>
-        </div>
+        <div><div class="phrase-en">"Walk me through your resume."</div><div class="phrase-ja">レジュメに沿って、経歴を詳しく説明してください</div></div>
       </div>
       <div class="phrase-card">
         <div class="phrase-dot" style="background: var(--teal);"></div>
-        <div>
-          <div class="phrase-en">"Can you double-click on that?"</div>
-          <div class="phrase-ja">その部分について、もう少し深掘りして教えてくれますか？</div>
-        </div>
+        <div><div class="phrase-en">"Can you double-click on that?"</div><div class="phrase-ja">その部分について、もう少し深掘りして教えてくれますか？</div></div>
       </div>
       <div class="phrase-card">
         <div class="phrase-dot" style="background: var(--teal);"></div>
-        <div>
-          <div class="phrase-en">"How do you handle user friction?"</div>
-          <div class="phrase-ja">ユーザーの摩擦／つまずきにどう対応しますか？</div>
-        </div>
+        <div><div class="phrase-en">"How do you handle user friction?"</div><div class="phrase-ja">ユーザーの摩擦／つまずきにどう対応しますか？</div></div>
       </div>
       <div class="phrase-card">
         <div class="phrase-dot" style="background: var(--teal);"></div>
-        <div>
-          <div class="phrase-en">"Tell me about a time when..."</div>
-          <div class="phrase-ja">〜だった時のことについて話してください</div>
-        </div>
+        <div><div class="phrase-en">"Tell me about a time when..."</div><div class="phrase-ja">〜だった時のことについて話してください</div></div>
       </div>
     </div>
   </div>
@@ -956,9 +552,8 @@
   function updateProgress() {
     const total = 5;
     const done = checkedCards.size;
-    const pct = done / total;
     const circumference = 94.25;
-    const offset = circumference - (circumference * pct);
+    const offset = circumference - (circumference * done / total);
     document.getElementById('progressCircle').style.strokeDashoffset = offset;
     document.getElementById('progressCount').textContent = done + '/' + total;
   }
