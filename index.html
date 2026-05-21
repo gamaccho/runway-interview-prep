@@ -9,10 +9,7 @@
 <style>
   :root {
     --bg: #080a0e;
-    --bg2: #0e1116;
-    --bg3: #141820;
     --card: #12161c;
-    --card-hover: #181e27;
     --border: rgba(255,255,255,0.07);
     --border-active: rgba(255,255,255,0.18);
     --accent: #7c6df8;
@@ -26,82 +23,24 @@
     --red-soft: #f87171;
     --teal: #2dd4bf;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  body { background: var(--bg); color: var(--text); font-family: 'Noto Sans JP', sans-serif; font-size: 15px; line-height: 1.7; min-height: 100vh; overflow-x: hidden; }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 15px;
-    line-height: 1.7;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-
-  .header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(8,10,14,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    padding: 14px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
+  .header { position: sticky; top: 0; z-index: 100; background: rgba(8,10,14,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; }
   .header-brand { display: flex; align-items: center; gap: 8px; }
-
-  .logo-pill {
-    background: var(--accent);
-    color: white;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    padding: 3px 8px;
-    border-radius: 4px;
-  }
-
-  .header-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 13px;
-    color: var(--text-muted);
-    font-weight: 400;
-    letter-spacing: 0.04em;
-  }
-
+  .logo-pill { background: var(--accent); color: white; font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; padding: 3px 8px; border-radius: 4px; }
+  .header-title { font-family: 'Space Grotesk', sans-serif; font-size: 13px; color: var(--text-muted); font-weight: 400; }
   .progress-ring { width: 36px; height: 36px; position: relative; }
   .progress-ring svg { transform: rotate(-90deg); }
   .progress-ring .track { fill: none; stroke: var(--border); stroke-width: 2.5; }
   .progress-ring .fill { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; transition: stroke-dashoffset 0.4s ease; }
-  .progress-count {
-    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-    font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 600; color: var(--accent2);
-  }
+  .progress-count { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 600; color: var(--accent2); }
 
   .hero { padding: 28px 16px 20px; position: relative; overflow: hidden; }
-  .hero::before {
-    content: ''; position: absolute; top: -40px; right: -60px;
-    width: 200px; height: 200px;
-    background: radial-gradient(circle, rgba(124,109,248,0.12) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero-tag {
-    font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 500;
-    letter-spacing: 0.14em; color: var(--accent2); text-transform: uppercase;
-    margin-bottom: 10px; display: flex; align-items: center; gap: 6px;
-  }
+  .hero::before { content: ''; position: absolute; top: -40px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(124,109,248,0.12) 0%, transparent 70%); pointer-events: none; }
+  .hero-tag { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; color: var(--accent2); text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
   .hero-tag::before { content: ''; width: 20px; height: 1px; background: var(--accent); }
-
-  .hero-name {
-    font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600;
-    line-height: 1.25; letter-spacing: -0.02em; color: white; margin-bottom: 8px;
-  }
-
+  .hero-name { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600; line-height: 1.25; letter-spacing: -0.02em; color: white; margin-bottom: 8px; }
   .hero-sub { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
 
   .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 0 16px 20px; }
@@ -111,128 +50,70 @@
 
   .nav-tabs { display: flex; gap: 4px; padding: 0 16px 16px; overflow-x: auto; scrollbar-width: none; }
   .nav-tabs::-webkit-scrollbar { display: none; }
-
-  .tab-btn {
-    flex-shrink: 0; padding: 7px 14px; border-radius: 20px; border: 1px solid var(--border);
-    background: transparent; color: var(--text-muted); font-size: 12px;
-    font-family: 'Noto Sans JP', sans-serif; cursor: pointer; transition: all 0.2s; white-space: nowrap;
-  }
+  .tab-btn { flex-shrink: 0; padding: 7px 14px; border-radius: 20px; border: 1px solid var(--border); background: transparent; color: var(--text-muted); font-size: 12px; font-family: 'Noto Sans JP', sans-serif; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
   .tab-btn.active { background: var(--accent); border-color: var(--accent); color: white; font-weight: 500; }
 
-  .section-label {
-    padding: 0 16px 12px; font-family: 'Space Grotesk', sans-serif; font-size: 11px;
-    font-weight: 500; letter-spacing: 0.1em; color: var(--text-dim); text-transform: uppercase;
-    display: flex; align-items: center; gap: 8px;
-  }
+  .section-label { padding: 0 16px 12px; font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; color: var(--text-dim); text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
   .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
   .cards-list { padding: 0 16px; display: flex; flex-direction: column; gap: 10px; }
-
   .qa-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: border-color 0.2s; }
   .qa-card.open { border-color: var(--border-active); }
-
   .qa-header { padding: 16px; cursor: pointer; display: flex; align-items: flex-start; gap: 12px; user-select: none; }
-
-  .qa-num {
-    font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600; color: var(--accent);
-    background: var(--accent-glow); border: 1px solid rgba(124,109,248,0.25); border-radius: 6px;
-    padding: 3px 7px; flex-shrink: 0; margin-top: 1px; letter-spacing: 0.04em;
-  }
-
-  /* コンテンツテキスト：1.2倍 */
+  .qa-num { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600; color: var(--accent); background: var(--accent-glow); border: 1px solid rgba(124,109,248,0.25); border-radius: 6px; padding: 3px 7px; flex-shrink: 0; margin-top: 1px; }
   .qa-title { flex: 1; font-size: 16.8px; font-weight: 500; line-height: 1.5; color: var(--text); }
-
   .qa-chevron { width: 18px; height: 18px; flex-shrink: 0; color: var(--text-dim); transition: transform 0.3s ease; margin-top: 2px; }
   .qa-card.open .qa-chevron { transform: rotate(180deg); color: var(--accent2); }
-
   .qa-body { display: none; padding: 0 16px 16px; border-top: 1px solid var(--border); padding-top: 14px; }
   .qa-card.open .qa-body { display: block; }
 
   .patterns-section { margin-bottom: 16px; }
-
-  .patterns-label {
-    font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 600;
-    letter-spacing: 0.12em; color: var(--teal); text-transform: uppercase;
-    margin-bottom: 8px; display: flex; align-items: center; gap: 6px;
-  }
+  .patterns-label { font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; color: var(--teal); text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
   .patterns-label::before { content: ''; width: 3px; height: 3px; border-radius: 50%; background: var(--teal); }
 
-  /* 問いかけパターン：1.2倍 */
-  .pattern-chip {
-    background: rgba(45,212,191,0.06); border: 1px solid rgba(45,212,191,0.18);
-    border-radius: 8px; padding: 8px 10px; font-size: 14.4px; color: rgba(45,212,191,0.85);
-    margin-bottom: 6px; line-height: 1.5; font-style: italic;
-  }
+  /* 問いかけパターン行 */
+  .pattern-row { background: rgba(45,212,191,0.06); border: 1px solid rgba(45,212,191,0.18); border-radius: 8px; padding: 8px 10px; margin-bottom: 6px; display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+  .pattern-text { font-size: 14.4px; color: rgba(45,212,191,0.85); line-height: 1.5; font-style: italic; flex: 1; }
 
   .answer-section { margin-top: 4px; }
   .answer-tab-row { display: flex; gap: 4px; margin-bottom: 10px; }
-
-  .atab {
-    padding: 5px 12px; border-radius: 16px; border: 1px solid var(--border);
-    background: transparent; color: var(--text-muted); font-size: 11px;
-    font-family: 'Space Grotesk', sans-serif; cursor: pointer; transition: all 0.2s;
-  }
+  .atab { padding: 5px 12px; border-radius: 16px; border: 1px solid var(--border); background: transparent; color: var(--text-muted); font-size: 11px; font-family: 'Space Grotesk', sans-serif; cursor: pointer; transition: all 0.2s; }
   .atab.active { background: rgba(124,109,248,0.15); border-color: rgba(124,109,248,0.4); color: var(--accent2); }
-
   .answer-en, .answer-ja { display: none; }
   .answer-en.show, .answer-ja.show { display: block; }
-
-  /* 英語回答：1.2倍 */
-  .answer-en {
-    font-family: 'Space Grotesk', sans-serif; font-size: 16.2px; line-height: 1.75; color: var(--text);
-    background: rgba(255,255,255,0.03); border-left: 2px solid var(--accent);
-    border-radius: 0 8px 8px 0; padding: 12px 14px;
-  }
-
-  /* 日本語訳：1.2倍 */
+  .answer-en { font-family: 'Space Grotesk', sans-serif; font-size: 16.2px; line-height: 1.75; color: var(--text); background: rgba(255,255,255,0.03); border-left: 2px solid var(--accent); border-radius: 0 8px 8px 0; padding: 12px 14px; }
   .answer-ja { font-size: 15.6px; line-height: 1.8; color: var(--text-muted); padding: 10px 0; }
 
+  /* 音声ボタン共通 */
+  .play-btn { display: inline-flex; align-items: center; gap: 5px; padding: 6px 12px; border-radius: 16px; border: 1px solid rgba(124,109,248,0.35); background: rgba(124,109,248,0.08); color: var(--accent2); font-size: 12px; font-family: 'Space Grotesk', sans-serif; cursor: pointer; transition: all 0.2s; user-select: none; white-space: nowrap; flex-shrink: 0; }
+  .play-btn:active { opacity: 0.7; }
+  .play-btn.playing { border-color: var(--green); color: var(--green); background: rgba(52,211,153,0.08); }
+  .play-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
+  /* 回答用：少し大きめ */
+  .play-btn-answer { margin-top: 10px; font-size: 13px; padding: 7px 14px; }
+
   .ice-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px; margin-bottom: 10px; }
-
-  /* アイスブレイク問い：1.2倍 */
-  .ice-q {
-    font-family: 'Space Grotesk', sans-serif; font-size: 14.4px; color: var(--amber);
-    font-style: italic; margin-bottom: 10px; padding-bottom: 10px;
-    border-bottom: 1px solid var(--border); line-height: 1.5;
-  }
-
-  /* アイスブレイク回答：1.2倍 */
+  .ice-q { font-family: 'Space Grotesk', sans-serif; font-size: 14.4px; color: var(--amber); font-style: italic; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--border); line-height: 1.5; }
   .ice-a { font-family: 'Space Grotesk', sans-serif; font-size: 15.6px; color: var(--text); line-height: 1.75; }
-
   .ice-tip { margin-top: 8px; font-size: 11px; color: var(--text-dim); display: flex; align-items: flex-start; gap: 5px; line-height: 1.5; }
   .ice-tip::before { content: '※'; flex-shrink: 0; color: var(--accent2); }
 
   .listen-group { margin-bottom: 20px; }
   .listen-group-title { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 10px; padding: 0 16px; }
-
   .phrase-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; margin-bottom: 6px; display: flex; gap: 10px; align-items: flex-start; }
-  .phrase-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 6px; }
-
-  /* フレーズ英語：1.2倍 */
+  .phrase-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 8px; }
   .phrase-en { font-family: 'Space Grotesk', sans-serif; font-size: 15.6px; color: var(--text); font-style: italic; margin-bottom: 3px; line-height: 1.5; }
-
-  /* フレーズ日本語：1.2倍 */
-  .phrase-ja { font-size: 14.4px; color: var(--text-muted); line-height: 1.5; }
+  .phrase-ja { font-size: 14.4px; color: var(--text-muted); line-height: 1.5; margin-bottom: 6px; }
 
   .rescue-card { background: linear-gradient(135deg, rgba(248,113,113,0.06), rgba(251,191,36,0.04)); border: 1px solid rgba(248,113,113,0.18); border-radius: 12px; padding: 14px 16px; margin: 0 16px 8px; }
-  .rescue-label { font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; color: var(--red-soft); text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
-  .rescue-label::before { content: '🚨'; font-size: 11px; }
-
-  /* 救済フレーズ：1.2倍 */
   .rescue-en { font-family: 'Space Grotesk', sans-serif; font-size: 15.6px; color: var(--text); font-style: italic; line-height: 1.6; margin-bottom: 4px; }
-  .rescue-ja { font-size: 14.4px; color: var(--text-muted); line-height: 1.5; }
+  .rescue-ja { font-size: 14.4px; color: var(--text-muted); line-height: 1.5; margin-bottom: 8px; }
 
   .panel { display: none; }
   .panel.active { display: block; }
-
   .bottom-space { height: 40px; }
 
-  .check-btn {
-    display: flex; align-items: center; gap: 6px; margin-top: 14px;
-    padding: 8px 14px; border-radius: 20px; border: 1px solid var(--border);
-    background: transparent; color: var(--text-muted); font-size: 12px;
-    font-family: 'Noto Sans JP', sans-serif; cursor: pointer; transition: all 0.2s;
-  }
+  .check-btn { display: flex; align-items: center; gap: 6px; margin-top: 14px; padding: 8px 14px; border-radius: 20px; border: 1px solid var(--border); background: transparent; color: var(--text-muted); font-size: 12px; font-family: 'Noto Sans JP', sans-serif; cursor: pointer; transition: all 0.2s; }
   .check-btn.done { border-color: rgba(52,211,153,0.3); color: var(--green); background: rgba(52,211,153,0.08); }
   .check-btn::before { content: '○'; }
   .check-btn.done::before { content: '✓'; }
@@ -278,6 +159,7 @@
   <div class="section-label">Core Interview Questions</div>
   <div class="cards-list">
 
+    <!-- Q1 -->
     <div class="qa-card" id="card-1">
       <div class="qa-header" onclick="toggleCard('card-1')">
         <span class="qa-num">Q1</span>
@@ -287,9 +169,9 @@
       <div class="qa-body">
         <div class="patterns-section">
           <div class="patterns-label">面接官の問いかけパターン</div>
-          <div class="pattern-chip">"Why do you think you are the best fit for this role among other creators in Japan?"</div>
-          <div class="pattern-chip">"What makes you uniquely qualified to represent Runway's creator education in the Japanese market?"</div>
-          <div class="pattern-chip">"Out of all the applicants, why should we choose you for our support team?"</div>
+          <div class="pattern-row"><span class="pattern-text">"Why do you think you are the best fit for this role among other creators in Japan?"</span><button class="play-btn" onclick="playAudio('q1_p1',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div>
+          <div class="pattern-row"><span class="pattern-text">"What makes you uniquely qualified to represent Runway's creator education in the Japanese market?"</span><button class="play-btn" onclick="playAudio('q1_p2',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div>
+          <div class="pattern-row"><span class="pattern-text">"Out of all the applicants, why should we choose you for our support team?"</span><button class="play-btn" onclick="playAudio('q1_p3',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div>
         </div>
         <div class="answer-section">
           <div class="answer-tab-row">
@@ -298,11 +180,13 @@
           </div>
           <div class="answer-en show" id="card-1-en">"Because I have been bridging the gap between advanced creative tools and users in Japan since the dawn of DTP. Moreover, as an early participant in NFFT led by Miho Kinomura, I already deeply understand Runway's community DNA in Japan. Combining my technical support experience with my active AI instructional workflows, I can perfectly scale Runway's localized onboarding and eliminate user friction."</div>
           <div class="answer-ja" id="card-1-ja">「私はDTPの黎明期から、日本における高度なクリエイティブツールとユーザーの架け橋であり続けてきたからです。さらに、木之村美穂氏率いるNFFTの初期メンバーとして、日本におけるRunwayのコミュニティDNAをすでに深く理解しています。私のテクニカルサポートの経験と、現在進行形のAI指導ワークフローを融合させることで、Runwayのローカライズされたオンボーディングを完璧に拡大し、ユーザーの摩擦を解消できます」</div>
+          <button class="play-btn play-btn-answer" onclick="playAudio('q1_answer',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> 回答音声を聞く</button>
         </div>
         <button class="check-btn" onclick="markDone('card-1',this)">練習済みにする</button>
       </div>
     </div>
 
+    <!-- Q2 -->
     <div class="qa-card" id="card-2">
       <div class="qa-header" onclick="toggleCard('card-2')">
         <span class="qa-num">Q2</span>
@@ -312,9 +196,9 @@
       <div class="qa-body">
         <div class="patterns-section">
           <div class="patterns-label">面接官の問いかけパターン</div>
-          <div class="pattern-chip">"Could you elaborate on the concept of 'logline' mentioned in your cover letter?"</div>
-          <div class="pattern-chip">"Why do you think defining a logline is crucial for creators using generative AI?"</div>
-          <div class="pattern-chip">"Can you double-click on how the human element and loglines fit into your teaching philosophy?"</div>
+          <div class="pattern-row"><span class="pattern-text">"Could you elaborate on the concept of 'logline' mentioned in your cover letter?"</span><button class="play-btn" onclick="playAudio('q2_p1',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div>
+          <div class="pattern-row"><span class="pattern-text">"Why do you think defining a logline is crucial for creators using generative AI?"</span><button class="play-btn" onclick="playAudio('q2_p2',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div>
+          <div class="pattern-row"><span class="pattern-text">"Can you double-click on how the human element and loglines fit into your teaching philosophy?"</span><button class="play-btn" onclick="playAudio('q2_p3',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div>
         </div>
         <div class="answer-section">
           <div class="answer-tab-row">
@@ -323,11 +207,13 @@
           </div>
           <div class="answer-en show" id="card-2-en">"AI tools make it easy to generate beautiful visuals, but without a strong core, it's just noise. I teach my students that a clear 'logline' is the anchor. When creators firmly define their intent before generation, they can effectively manage prompt sequencing and seed control to achieve true asset consistency, rather than just relying on random AI luck."</div>
           <div class="answer-ja" id="card-2-ja">「AIツールを使えば美しい映像を作ることは簡単ですが、強い核心がなければそれはただのノイズです。私は学生たちに、明確な『ログライン』こそがアンカー（錨）だと教えています。クリエイターが生成前に自分の意図をしっかりと定義することで、単なるAIのランダムな運に頼るのではなく、真のアセットの一貫性を達成するための正確なプロンプト配列やシード値管理を効果的に行うことができるようになります」</div>
+          <button class="play-btn play-btn-answer" onclick="playAudio('q2_answer',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> 回答音声を聞く</button>
         </div>
         <button class="check-btn" onclick="markDone('card-2',this)">練習済みにする</button>
       </div>
     </div>
 
+    <!-- Q3 -->
     <div class="qa-card" id="card-3">
       <div class="qa-header" onclick="toggleCard('card-3')">
         <span class="qa-num">Q3</span>
@@ -337,9 +223,9 @@
       <div class="qa-body">
         <div class="patterns-section">
           <div class="patterns-label">面接官の問いかけパターン</div>
-          <div class="pattern-chip">"How would you break down this automated workflow to teach it to a complete beginner?"</div>
-          <div class="pattern-chip">"What is your step-by-step approach to onboarding a user who is intimidated by complex AI pipelines?"</div>
-          <div class="pattern-chip">"If a creator struggles to understand your template, how do you simplify the learning process?"</div>
+          <div class="pattern-row"><span class="pattern-text">"How would you break down this automated workflow to teach it to a complete beginner?"</span><button class="play-btn" onclick="playAudio('q3_p1',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div>
+          <div class="pattern-row"><span class="pattern-text">"What is your step-by-step approach to onboarding a user who is intimidated by complex AI pipelines?"</span><button class="play-btn" onclick="playAudio('q3_p2',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div>
+          <div class="pattern-row"><span class="pattern-text">"If a creator struggles to understand your template, how do you simplify the learning process?"</span><button class="play-btn" onclick="playAudio('q3_p3',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div>
         </div>
         <div class="answer-section">
           <div class="answer-tab-row">
@@ -348,11 +234,13 @@
           </div>
           <div class="answer-en show" id="card-3-en">"I always lower the entry barrier by treating the workflow as a visual, systemized template. First, I have them change just one metric in the left panel—like the character trait—so they can instantly see the dramatic change in the output. Once they experience that instant gratification, I guide them step-by-step into the deeper logic of asset aggregation and multi-modal synchronization."</div>
           <div class="answer-ja" id="card-3-ja">「私はいつも、そのワークフローを視覚的でシステム化されたテンプレートとして扱うことで、参入障壁を下げています。まず、左側のパネルにあるキャラクター特性などの数値を1つだけ変更してもらい、出力が劇的に変わるのを瞬時に体感させます。その『即時的な達成感』を経験させた後、アセットの集約やマルチモーダルの同期といった深いロジックへとステップ・バイ・ステップで導いていきます」</div>
+          <button class="play-btn play-btn-answer" onclick="playAudio('q3_answer',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> 回答音声を聞く</button>
         </div>
         <button class="check-btn" onclick="markDone('card-3',this)">練習済みにする</button>
       </div>
     </div>
 
+    <!-- Q4 -->
     <div class="qa-card" id="card-4">
       <div class="qa-header" onclick="toggleCard('card-4')">
         <span class="qa-num">Q4</span>
@@ -362,9 +250,9 @@
       <div class="qa-body">
         <div class="patterns-section">
           <div class="patterns-label">面接官の問いかけパターン</div>
-          <div class="pattern-chip">"Tell me about a time when you had to manage a wide gap in students' understanding or vision."</div>
-          <div class="pattern-chip">"How do you handle situations where users have completely different levels of resolution regarding their creative process?"</div>
-          <div class="pattern-chip">"Can you share an example of how you tailored your teaching method to accommodate different individual goals?"</div>
+          <div class="pattern-row"><span class="pattern-text">"Tell me about a time when you had to manage a wide gap in students' understanding or vision."</span><button class="play-btn" onclick="playAudio('q4_p1',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div>
+          <div class="pattern-row"><span class="pattern-text">"How do you handle situations where users have completely different levels of resolution regarding their creative process?"</span><button class="play-btn" onclick="playAudio('q4_p2',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div>
+          <div class="pattern-row"><span class="pattern-text">"Can you share an example of how you tailored your teaching method to accommodate different individual goals?"</span><button class="play-btn" onclick="playAudio('q4_p3',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div>
         </div>
         <div class="answer-section">
           <div class="answer-tab-row">
@@ -373,11 +261,13 @@
           </div>
           <div class="answer-en show" id="card-4-en">"As a technical instructor, I realized that a one-size-fits-all lecture struggled to foster growth because students possessed vastly different creative visions and varying levels of resolution regarding the production process. By shifting to an active-listening approach to clarify each individual's vision and guide their specific workflow, I enabled them to smoothly execute projects utilizing the right tools, which created a sense of accomplishment that significantly accelerated their growth."</div>
           <div class="answer-ja" id="card-4-ja">「技術インストラクターとして、学生たちのスキルレベルに大きな差はなくても、彼らが抱くクリエイティブなビジョンや、制作プロセスに対する解像度の高さに大きなばらつきがあったため、一律の講義では全員の成長を促すことが難しいと気づきました。一人ひとりのビジョンを明確にし、それぞれのワークフローを導くための『傾聴アプローチ』へとシフトした結果、学生たちは最適なツールを使ってプロジェクトをスムーズに実行できるようになり、その達成感が彼らの成長を大幅に加速させました」</div>
+          <button class="play-btn play-btn-answer" onclick="playAudio('q4_answer',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> 回答音声を聞く</button>
         </div>
         <button class="check-btn" onclick="markDone('card-4',this)">練習済みにする</button>
       </div>
     </div>
 
+    <!-- Q5 -->
     <div class="qa-card" id="card-5">
       <div class="qa-header" onclick="toggleCard('card-5')">
         <span class="qa-num">Q5</span>
@@ -387,9 +277,9 @@
       <div class="qa-body">
         <div class="patterns-section">
           <div class="patterns-label">面接官の問いかけパターン</div>
-          <div class="pattern-chip">"Runway moves incredibly fast with weekly updates. How do you stay up-to-date with rapid changes?"</div>
-          <div class="pattern-chip">"How do you adapt your instructional materials when the technology updates overnight?"</div>
-          <div class="pattern-chip">"Can you tell us about your process for benchmarking and mastering brand-new features under tight timelines?"</div>
+          <div class="pattern-row"><span class="pattern-text">"Runway moves incredibly fast with weekly updates. How do you stay up-to-date with rapid changes?"</span><button class="play-btn" onclick="playAudio('q5_p1',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div>
+          <div class="pattern-row"><span class="pattern-text">"How do you adapt your instructional materials when the technology updates overnight?"</span><button class="play-btn" onclick="playAudio('q5_p2',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div>
+          <div class="pattern-row"><span class="pattern-text">"Can you tell us about your process for benchmarking and mastering brand-new features under tight timelines?"</span><button class="play-btn" onclick="playAudio('q5_p3',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div>
         </div>
         <div class="answer-section">
           <div class="answer-tab-row">
@@ -398,6 +288,7 @@
           </div>
           <div class="answer-en show" id="card-5-en">"Adapting to rapid tech shifts is something I've done my entire career. I don't just read release notes; I actively benchmark new features in my daily classroom routines to test their real-world edge cases. By instantly transforming Runway's latest multi-modal features into deterministic, structured frameworks, I keep both my students and myself ahead of the curve."</div>
           <div class="answer-ja" id="card-5-ja">「急速なテクノロジーのシフトに適応することは、私のキャリア全体を通じて行ってきたことです。私は単にリリースノートを読むだけでなく、日々のクラスのルーティンの中で新機能を積極的にベンチマークし、実際のユースケースにおけるエッジケースをテストしています。Runwayの最新のマルチモーダル機能を即座に再現性のある構造化されたフレームワークに変換することで、学生も自分自身も常に最先端を走り続けることができます」</div>
+          <button class="play-btn play-btn-answer" onclick="playAudio('q5_answer',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> 回答音声を聞く</button>
         </div>
         <button class="check-btn" onclick="markDone('card-5',this)">練習済みにする</button>
       </div>
@@ -410,106 +301,94 @@
 <div class="panel" id="panel-ice">
   <div class="section-label">Icebreaker Phrases</div>
   <div style="padding: 0 16px;">
-
     <div class="ice-card">
       <div class="ice-q">🌤 "How is the weather over there in Japan?"</div>
       <div class="ice-a">"It's actually pretty late at night here, but the weather has been really nice and warm lately. How about over there in [City Name]?"</div>
       <div class="ice-tip">時差の事実に触れることで、海外リモートワークの現実感を相手に意識させられます。</div>
+      <button class="play-btn play-btn-answer" onclick="playAudio('ice_01_weather',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> 音声を聞く</button>
     </div>
-
     <div class="ice-card">
       <div class="ice-q">🔗 "Did you have any trouble getting into the call / link?"</div>
       <div class="ice-a">"No trouble at all! The connection is crystal clear. I've been really looking forward to this call today."</div>
       <div class="ice-tip">「crystal clear」というポジティブな表現を使いつつ、熱意を滑り込ませます。</div>
+      <button class="play-btn play-btn-answer" onclick="playAudio('ice_02_connection',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> 音声を聞く</button>
     </div>
-
     <div class="ice-card">
       <div class="ice-q">📅 "How's your week going? Are you having a busy week?"</div>
       <div class="ice-a">"It's been pretty busy but very exciting. I've been split between teaching AI workflows to my students and working on some creative projects. How about yours?"</div>
       <div class="ice-tip">忙しさを「exciting」とポジティブに捉え、レジュメの活動を自然に印象付けます。</div>
+      <button class="play-btn play-btn-answer" onclick="playAudio('ice_03_week',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> 音声を聞く</button>
     </div>
-
     <div class="ice-card">
       <div class="ice-q">☀️ "How's your day going so far?"</div>
       <div class="ice-a">"It's been great. I just wrapped up my teaching schedule for the day, so I'm fully focused and ready for our conversation."</div>
       <div class="ice-tip">「wrapped up」という自然なビジネス表現を使い、プロフェッショナルな姿勢を示します。</div>
+      <button class="play-btn play-btn-answer" onclick="playAudio('ice_04_day',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> 音声を聞く</button>
     </div>
-
     <div style="background: rgba(124,109,248,0.06); border: 1px solid rgba(124,109,248,0.2); border-radius: 12px; padding: 14px; margin-top: 4px;">
       <div style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: var(--accent2); text-transform: uppercase; margin-bottom: 8px;">回答の黄金パターン</div>
-      <div style="font-size: 15.6px; color: var(--text-muted); line-height: 1.8;">
-        返答（Yes/No + α） <span style="color: var(--accent);">→</span> 自分の現在の状況を一言 <span style="color: var(--accent);">→</span> 相手への聞き返し
-      </div>
+      <div style="font-size: 15.6px; color: var(--text-muted); line-height: 1.8;">返答（Yes/No + α） <span style="color: var(--accent);">→</span> 自分の現在の状況を一言 <span style="color: var(--accent);">→</span> 相手への聞き返し</div>
     </div>
-
   </div>
 </div>
 
 <!-- Listening Panel -->
 <div class="panel" id="panel-listen">
   <div class="section-label">Listening Tips</div>
-
   <div class="listen-group">
     <div class="listen-group-title">本題へ移行する合図</div>
     <div style="padding: 0 16px; display: flex; flex-direction: column; gap: 6px;">
-      <div class="phrase-card">
-        <div class="phrase-dot"></div>
-        <div><div class="phrase-en">"Let's dive right in." / "Let's jump right into it."</div><div class="phrase-ja">早速、本題に入りましょう</div></div>
-      </div>
-      <div class="phrase-card">
-        <div class="phrase-dot"></div>
-        <div><div class="phrase-en">"To kick things off, could you...?"</div><div class="phrase-ja">まずは口火を切るために、〜してもらえますか？</div></div>
-      </div>
-      <div class="phrase-card">
-        <div class="phrase-dot"></div>
-        <div><div class="phrase-en">"I'd love to start by..."</div><div class="phrase-ja">まずは〜から始めたいと思います</div></div>
-      </div>
+      <div class="phrase-card"><div class="phrase-dot"></div><div style="flex:1"><div class="phrase-en">"Let's dive right in."</div><div class="phrase-ja">早速、本題に入りましょう</div><button class="play-btn" onclick="playAudio('listen_01',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div></div>
+      <div class="phrase-card"><div class="phrase-dot"></div><div style="flex:1"><div class="phrase-en">"Let's jump right into it."</div><div class="phrase-ja">早速、本題に入りましょう</div><button class="play-btn" onclick="playAudio('listen_02',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div></div>
+      <div class="phrase-card"><div class="phrase-dot"></div><div style="flex:1"><div class="phrase-en">"To kick things off, could you...?"</div><div class="phrase-ja">まずは口火を切るために、〜してもらえますか？</div><button class="play-btn" onclick="playAudio('listen_03',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div></div>
+      <div class="phrase-card"><div class="phrase-dot"></div><div style="flex:1"><div class="phrase-en">"I'd love to start by..."</div><div class="phrase-ja">まずは〜から始めたいと思います</div><button class="play-btn" onclick="playAudio('listen_04',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div></div>
     </div>
   </div>
-
   <div class="listen-group">
     <div class="listen-group-title">重要キーワード・イディオム</div>
     <div style="padding: 0 16px; display: flex; flex-direction: column; gap: 6px;">
-      <div class="phrase-card">
-        <div class="phrase-dot" style="background: var(--teal);"></div>
-        <div><div class="phrase-en">"Walk me through your resume."</div><div class="phrase-ja">レジュメに沿って、経歴を詳しく説明してください</div></div>
-      </div>
-      <div class="phrase-card">
-        <div class="phrase-dot" style="background: var(--teal);"></div>
-        <div><div class="phrase-en">"Can you double-click on that?"</div><div class="phrase-ja">その部分について、もう少し深掘りして教えてくれますか？</div></div>
-      </div>
-      <div class="phrase-card">
-        <div class="phrase-dot" style="background: var(--teal);"></div>
-        <div><div class="phrase-en">"How do you handle user friction?"</div><div class="phrase-ja">ユーザーの摩擦／つまずきにどう対応しますか？</div></div>
-      </div>
-      <div class="phrase-card">
-        <div class="phrase-dot" style="background: var(--teal);"></div>
-        <div><div class="phrase-en">"Tell me about a time when..."</div><div class="phrase-ja">〜だった時のことについて話してください</div></div>
-      </div>
+      <div class="phrase-card"><div class="phrase-dot" style="background:var(--teal)"></div><div style="flex:1"><div class="phrase-en">"Walk me through your resume."</div><div class="phrase-ja">レジュメに沿って経歴を説明してください</div><button class="play-btn" onclick="playAudio('listen_05',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div></div>
+      <div class="phrase-card"><div class="phrase-dot" style="background:var(--teal)"></div><div style="flex:1"><div class="phrase-en">"Can you double-click on that?"</div><div class="phrase-ja">もう少し深掘りして教えてくれますか？</div><button class="play-btn" onclick="playAudio('listen_06',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div></div>
+      <div class="phrase-card"><div class="phrase-dot" style="background:var(--teal)"></div><div style="flex:1"><div class="phrase-en">"How do you handle user friction?"</div><div class="phrase-ja">ユーザーの摩擦にどう対応しますか？</div><button class="play-btn" onclick="playAudio('listen_07',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div></div>
+      <div class="phrase-card"><div class="phrase-dot" style="background:var(--teal)"></div><div style="flex:1"><div class="phrase-en">"Tell me about a time when..."</div><div class="phrase-ja">〜だった時のことについて話してください</div><button class="play-btn" onclick="playAudio('listen_08',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div></div>
     </div>
   </div>
-
   <div class="listen-group">
-    <div class="listen-group-title" style="color: var(--red-soft);">🚨 聞き取れなかった時の救済フレーズ</div>
-    <div class="rescue-card">
-      <div class="rescue-en">"Sorry, could you say that again?"</div>
-      <div class="rescue-ja">すみません、もう一度言っていただけますか？</div>
-    </div>
-    <div class="rescue-card">
-      <div class="rescue-en">"Sorry, the connection cut out for a second. Would you mind repeating the question?"</div>
-      <div class="rescue-ja">すみません、一瞬回線が途切れてしまいました。質問を繰り返していただけますか？</div>
-    </div>
-    <div class="rescue-card">
-      <div class="rescue-en">"Just to make sure I understand correctly, are you asking about...?"</div>
-      <div class="rescue-ja">正しく理解できているか確認させてください、〜について聞いていらっしゃいますか？</div>
-    </div>
+    <div class="listen-group-title" style="color:var(--red-soft)">🚨 聞き取れなかった時の救済フレーズ</div>
+    <div class="rescue-card"><div class="rescue-en">"Sorry, could you say that again?"</div><div class="rescue-ja">すみません、もう一度言っていただけますか？</div><button class="play-btn" onclick="playAudio('rescue_01',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div>
+    <div class="rescue-card"><div class="rescue-en">"Sorry, the connection cut out for a second. Would you mind repeating the question?"</div><div class="rescue-ja">一瞬回線が途切れてしまいました。繰り返していただけますか？</div><button class="play-btn" onclick="playAudio('rescue_02',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div>
+    <div class="rescue-card"><div class="rescue-en">"Just to make sure I understand correctly, are you asking about...?"</div><div class="rescue-ja">正しく理解できているか確認させてください。〜について聞いていらっしゃいますか？</div><button class="play-btn" onclick="playAudio('rescue_03',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>音声</button></div>
   </div>
-
 </div>
 
 <div class="bottom-space"></div>
 
 <script>
+  const BASE = 'audio/';
+  let currentAudio = null;
+  let currentBtn = null;
+
+  function playAudio(name, btn) {
+    if (currentAudio && !currentAudio.paused) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+      if (currentBtn) resetBtn(currentBtn);
+      if (currentBtn === btn) { currentAudio = null; currentBtn = null; return; }
+    }
+    const audio = new Audio(BASE + name + '.mp3');
+    currentAudio = audio;
+    currentBtn = btn;
+    btn.classList.add('playing');
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor" style="width:13px;height:13px"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> 再生中...';
+    audio.play();
+    audio.onended = () => { resetBtn(btn); currentAudio = null; currentBtn = null; };
+  }
+
+  function resetBtn(btn) {
+    btn.classList.remove('playing');
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor" style="width:13px;height:13px"><path d="M8 5v14l11-7z"/></svg>' + (btn.classList.contains('play-btn-answer') ? ' 回答音声を聞く' : '音声');
+  }
+
   let checkedCards = new Set();
 
   function switchTab(tab) {
@@ -519,10 +398,7 @@
     event.target.classList.add('active');
   }
 
-  function toggleCard(id) {
-    const card = document.getElementById(id);
-    card.classList.toggle('open');
-  }
+  function toggleCard(id) { document.getElementById(id).classList.toggle('open'); }
 
   function switchAnswer(cardId, lang, btn) {
     const card = document.getElementById(cardId);
@@ -536,26 +412,13 @@
   function markDone(cardId, btn) {
     const card = document.getElementById(cardId);
     if (checkedCards.has(cardId)) {
-      checkedCards.delete(cardId);
-      card.classList.remove('checked');
-      btn.classList.remove('done');
-      btn.textContent = '練習済みにする';
+      checkedCards.delete(cardId); card.classList.remove('checked'); btn.classList.remove('done'); btn.textContent = '練習済みにする';
     } else {
-      checkedCards.add(cardId);
-      card.classList.add('checked');
-      btn.classList.add('done');
-      btn.textContent = '練習完了！';
+      checkedCards.add(cardId); card.classList.add('checked'); btn.classList.add('done'); btn.textContent = '練習完了！';
     }
-    updateProgress();
-  }
-
-  function updateProgress() {
-    const total = 5;
-    const done = checkedCards.size;
-    const circumference = 94.25;
-    const offset = circumference - (circumference * done / total);
+    const offset = 94.25 - (94.25 * checkedCards.size / 5);
     document.getElementById('progressCircle').style.strokeDashoffset = offset;
-    document.getElementById('progressCount').textContent = done + '/' + total;
+    document.getElementById('progressCount').textContent = checkedCards.size + '/5';
   }
 </script>
 </body>
